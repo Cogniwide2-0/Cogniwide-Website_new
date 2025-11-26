@@ -112,8 +112,8 @@ const TrustIndicators = () => {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h3 className="text-center text-gray-600 text-lg mb-12 font-medium">
-            Trusted by leading enterprises worldwide
+          <h3 className="text-center text-gray-900 text-3xl lg:text-4xl mb-12 font-medium">
+            Trusted by leading <span className='text-brand-blue'>Enterprises Worldwide</span>
           </h3>
          
           <div className="overflow-hidden">

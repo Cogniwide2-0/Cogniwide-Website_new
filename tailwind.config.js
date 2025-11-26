@@ -10,10 +10,12 @@ module.exports = {
       colors: {
         brand: {
           // Company Brand Colors
-          blue: '#2563EB',
-          'blue-light': '#60A5FA',
+          // blue: '#2563EB',
+          blue: '#2563eb',
+          // 'blue-light': '#60A5FA',
+          'blue-light': '#93C5FD',
           'blue-light1':'#eff6ff',
-          'blue-dark': '#1E40AF',
+          'blue-dark': '#1a4f8c',
           yellow: '#FBBF24',
           'yellow-light': '#FCD34D',
           'yellow-light1': '#fefce8',

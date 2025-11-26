@@ -11,7 +11,7 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="relative bg-gray-50 py-20 lg:py-30 overflow-hidden">
+    <section className="relative bg-gray-100 py-20 lg:py-30 overflow-hidden">
       {/* Simple decorative circles */}
       <div className="absolute inset-0 z-0">
         {/* <div className="absolute top-20 right-32 w-64 h-64 bg-gray-200 rounded-full opacity-40" /> */}
@@ -37,7 +37,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-brand-blue text-sm font-medium">⚡ Enterprise AI Platform</span>
+              <span className="text-brand-blue text-sm font-medium">Enterprise AI Platform</span>
             </motion.div>
 
             {/* Main Headline */}
