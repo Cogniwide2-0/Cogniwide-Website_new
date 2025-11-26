@@ -36,7 +36,7 @@ const solutions = [
       </svg>
     ),
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200',
+    borderColor: 'text-brand-green',
     iconBg: 'bg-brand-green',
     iconColor: 'text-white',
     accentColor: 'text-brand-green'
@@ -52,11 +52,11 @@ const solutions = [
         <path d="M12.5 7.5L10 10C9.5 10.5 9.5 11.5 10 12C10.5 12.5 11.5 12.5 12 12L15.5 8.5C17 7 17 4.5 15.5 3C14 1.5 11.5 1.5 10 3L3.5 9.5C2 11 2 13.5 3.5 15C5 16.5 7.5 16.5 9 15L12.5 11.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200',
-    iconBg: 'bg-brand-purple',
+    bgColor: 'bg-brand-yellow-light-bg',
+    borderColor: 'border-brand-yellow-light',
+    iconBg: 'bg-brand-yellow',
     iconColor: 'text-white',
-    accentColor: 'text-brand-purple'
+    accentColor: 'text-brand-yellow'
   }
 ];
 

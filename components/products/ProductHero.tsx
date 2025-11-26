@@ -30,13 +30,13 @@ interface ProductHeroProps {
   product?: ProductData
 }
 
-const ProductHero: React.FC<ProductHeroProps> = ({ 
-  title, 
-  subtitle, 
-  primaryCTA, 
-  secondaryCTA, 
-  backgroundPattern, 
-  product 
+const ProductHero: React.FC<ProductHeroProps> = ({
+  title,
+  subtitle,
+  primaryCTA,
+  secondaryCTA,
+  backgroundPattern,
+  product
 }) => {
   const patternClasses = {
     chat: 'bg-gradient-to-br from-blue-50 to-indigo-100',
@@ -49,23 +49,22 @@ const ProductHero: React.FC<ProductHeroProps> = ({
     return (
       <div className="relative overflow-hidden">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center bg-white">
+        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-blue-50">
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <div 
-              className="absolute inset-0 bg-yellow-400/5" 
+          <div className="absolute inset-0 opacity-30">
+            <div
+              className="absolute inset-0 bg-brand-blue/5"
               style={{
-                backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 215, 0, 0.3) 1px, transparent 0)',
-                backgroundSize: '20px 20px'
-              }} 
+                backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.15) 1px, transparent 0)',
+                backgroundSize: '40px 40px'
+              }}
             />
           </div>
-          
-          {/* Yellow accent elements */}
+
+          {/* Subtle accent elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-10 w-48 h-48 bg-yellow-500/10 rounded-full blur-2xl animate-pulse [animation-delay:1s]"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl animate-pulse [animation-delay:2s]"></div>
+            <div className="absolute top-20 right-20 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl"></div>
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,24 +77,24 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                   transition={{ duration: 0.6 }}
                   className="flex justify-center lg:justify-start mb-6"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r bg-brand-blue text-white">
-                    {product.icon}
+                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brand-blue shadow-lg">
+                    <div className="text-white">
+                      {product.icon}
+                    </div>
                   </div>
                 </motion.div>
-                
+
                 <motion.h1
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4"
+                  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 }}
                 >
-                  <span className="bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
-                    {product.name}
-                  </span>
+                  {product.name}
                 </motion.h1>
 
                 <motion.h2
-                  className="text-xl sm:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 font-medium"
+                  className="text-xl sm:text-2xl lg:text-3xl text-brand-blue mb-6 font-semibold"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -104,7 +103,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                 </motion.h2>
 
                 <motion.p
-                  className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed"
+                  className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -118,13 +117,12 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <Button 
-                    variant="primary" 
-                    size="lg" 
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold hover:from-yellow-300 hover:to-yellow-400 shadow-lg hover:shadow-xl shadow-yellow-500/25"
-                  >
+                  <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-blue-dark transition-all shadow-lg hover:shadow-xl">
                     Schedule Demo
-                  </Button>
+                  </button>
+                  <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-blue hover:text-white transition-all">
+                    Learn More
+                  </button>
                 </motion.div>
               </div>
 
@@ -141,66 +139,62 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  <div className="relative bg-gray-800/90 rounded-2xl shadow-2xl p-8 border border-yellow-400/20">
+                  <div className="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
                     {/* Generic Dashboard for other products */}
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center text-black">
+                          <div className="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center text-white">
                             {product.icon}
                           </div>
                           <div>
-                            <div className="font-semibold text-white">{product.name} Dashboard</div>
-                            <div className="text-sm text-gray-300">Real-time monitoring</div>
+                            <div className="font-semibold text-gray-900">{product.name} Dashboard</div>
+                            <div className="text-sm text-gray-600">Real-time monitoring</div>
                           </div>
                         </div>
                         <div className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                          <span className="text-sm text-yellow-400 font-medium">Active</span>
+                          <div className="w-2 h-2 bg-brand-green rounded-full animate-pulse"></div>
+                          <span className="text-sm text-brand-green font-medium">Active</span>
                         </div>
                       </div>
-                      
+
                       <div className="grid grid-cols-3 gap-4">
-                        <div className="bg-yellow-400/10 rounded-lg p-4 text-center border border-yellow-400/20">
-                          <div className="text-2xl font-bold text-yellow-400">24</div>
-                          <div className="text-xs text-yellow-300">Active</div>
+                        <div className="bg-blue-50 rounded-lg p-4 text-center border border-blue-200">
+                          <div className="text-2xl font-bold text-brand-blue">24</div>
+                          <div className="text-xs text-gray-600">Active</div>
                         </div>
-                        <div className="bg-yellow-400/10 rounded-lg p-4 text-center border border-yellow-400/20">
-                          <div className="text-2xl font-bold text-yellow-400">95%</div>
-                          <div className="text-xs text-yellow-300">Efficiency</div>
+                        <div className="bg-green-50 rounded-lg p-4 text-center border border-green-200">
+                          <div className="text-2xl font-bold text-brand-green">95%</div>
+                          <div className="text-xs text-gray-600">Efficiency</div>
                         </div>
-                        <div className="bg-yellow-400/10 rounded-lg p-4 text-center border border-yellow-400/20">
-                          <div className="text-2xl font-bold text-yellow-400">1.2k</div>
-                          <div className="text-xs text-yellow-300">Tasks/Hour</div>
+                        <div className="bg-purple-50 rounded-lg p-4 text-center border border-purple-200">
+                          <div className="text-2xl font-bold text-brand-purple">1.2k</div>
+                          <div className="text-xs text-gray-600">Tasks/Hour</div>
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <div className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg border border-yellow-400/10">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
                           <div className="flex items-center space-x-3">
-                            <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
-                              <div className="w-2 h-2 bg-black rounded-full"></div>
+                            <div className="w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white rounded-full"></div>
                             </div>
-                            <span className="text-sm font-medium text-white">Primary Process</span>
+                            <span className="text-sm font-medium text-gray-900">Primary Process</span>
                           </div>
-                          <span className="text-xs text-yellow-400 font-medium">Running</span>
+                          <span className="text-xs text-brand-green font-medium">Running</span>
                         </div>
-                        <div className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg border border-yellow-400/10">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
                           <div className="flex items-center space-x-3">
-                            <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
-                              <div className="w-2 h-2 bg-black rounded-full"></div>
+                            <div className="w-6 h-6 bg-brand-blue rounded-full flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white rounded-full"></div>
                             </div>
-                            <span className="text-sm font-medium text-white">Secondary Process</span>
+                            <span className="text-sm font-medium text-gray-900">Secondary Process</span>
                           </div>
-                          <span className="text-xs text-yellow-400 font-medium">Processing</span>
+                          <span className="text-xs text-brand-blue font-medium">Processing</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-300 rounded-full animate-pulse"></div>
                 </motion.div>
               )}
             </div>
@@ -208,7 +202,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
         </section>
 
         {/* Features Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -233,12 +227,12 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
+                  className="bg-blue-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-200 hover:border-brand-blue"
                 >
-                  <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
-                    <div className="w-6 h-6 text-yellow-600">
+                  <div className="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-6 h-6 text-white">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                   </div>
@@ -258,7 +252,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 mt-16 border border-yellow-200 shadow-lg"
+              className="bg-gradient-to-br from-brand-blue-light1 to-blue-50 rounded-2xl p-8 mt-16 border border-blue-200 shadow-lg"
             >
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -276,9 +270,9 @@ const ProductHero: React.FC<ProductHeroProps> = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                    className="text-center p-4 bg-white rounded-xl shadow-sm border border-yellow-200 hover:shadow-md transition-shadow duration-300"
+                    className="text-center p-4 bg-white rounded-xl shadow-sm border border-blue-200 hover:shadow-md transition-shadow duration-300"
                   >
-                    <div className="text-2xl font-bold text-yellow-600 mb-1">
+                    <div className="text-2xl font-bold text-brand-blue mb-1">
                       {benefit}
                     </div>
                     <div className="text-xs text-gray-600 font-medium">
@@ -299,9 +293,9 @@ const ProductHero: React.FC<ProductHeroProps> = ({
 
   // Original layout for backward compatibility
   return (
-    <Section 
-      background="white" 
-      padding="xl" 
+    <Section
+      background="white"
+      padding="xl"
       className={`${patternClasses[backgroundPattern || 'chat']} relative overflow-hidden`}
     >
       {/* Background Pattern */}

@@ -86,8 +86,8 @@ export const ProductShowcase = () => {
             // Use different colors for visual variety while staying consistent - no yellow on dark background
             const colors = [
               { bg: 'bg-blue-500', text: 'text-white' },
-              { bg: 'bg-green-500', text: 'text-white' },
-              { bg: 'bg-purple-500', text: 'text-white' }
+              { bg: 'bg-brand-green', text: 'text-white' },
+              { bg: 'bg-brand-yellow', text: 'text-white' }
             ];
             const colorScheme = colors[index % colors.length];
 
@@ -102,12 +102,12 @@ export const ProductShowcase = () => {
                   ease: [0.25, 0.46, 0.45, 0.94]
                 }}
                 viewport={{ once: true, margin: "-50px" }}
-                className="group relative bg-brand-white/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-white/20 shadow-lg hover:shadow-xl hover:shadow-yellow-400/20 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-yellow-400/30"
+                className="group relative bg-brand-white/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-white/20 shadow-lg hover:shadow-xl hover:shadow-yellow-400/20 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-yellow-400/30 flex flex-col"
               >
                 {/* Subtle Gradient Border Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-grow">
                   <div className="flex items-center space-x-4 mb-6">
                     <div className={`w-16 h-16 rounded-xl ${colorScheme.bg} flex items-center justify-center ${colorScheme.text} shadow-lg group-hover:scale-105 group-hover:shadow-xl transition-all duration-300`}>
                       {product.icon}
@@ -121,7 +121,7 @@ export const ProductShowcase = () => {
                     {product.description}
                   </p>
 
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-8 flex-grow">
                     {product.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
                         <svg className="w-4 h-4 text-yellow-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -132,10 +132,10 @@ export const ProductShowcase = () => {
                     ))}
                   </div>
 
-                  <Link href={product.href}>
-                    <button className="w-full bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-blue-dark hover:shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 flex items-center justify-center transform hover:scale-[1.02]">
-                      Learn More
-                      <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <Link href={product.href} className="mt-auto">
+                    <button className="w-full bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-blue-dark hover:shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-[1.02]">
+                      <span>Learn More</span>
+                      <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </button>
                   </Link>
                 </div>
